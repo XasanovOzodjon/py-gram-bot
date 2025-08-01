@@ -3,14 +3,8 @@ from config import TOKEN
 
 
 class Update:
-
-    def __init__(self, update_id: int, message: dict | None = None):
-        self.update_id = update_id
-        self.message = Message(
-            message_id=message['message_id'],
-            from_user=message['from'],
-            text=message.get('text'),
-        )
+    def __init__(self, message):
+        self.message = message
 
 
 class Message:
@@ -29,8 +23,8 @@ class Message:
         requests.get(url=url, params=payload)
 
 
+
 class User:
 
     def __init__(self, chat_id: int):
         self.chat_id = chat_id
-    

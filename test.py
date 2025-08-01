@@ -5,6 +5,7 @@ from config import TOKEN
 
 
 def handle_message(update: Update):
+    print(update.message.from_user.chat_id, update.message.text)  # Log the message text
     if update.message.text:
         update.message.reply_text(update.message.text)
 
